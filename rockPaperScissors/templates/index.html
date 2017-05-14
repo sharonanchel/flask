@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h3>Wins {{ session['win'] }}</h3>
+            <h3>Losses {{ session['loss'] }}</h3>
+            <h3>Ties {{ session['tie'] }}</h3>
+            <h1>Rock Paper Scissors</h1>
+            {{ session['outcome'] }}
+            <form action="/process" method="post">
+                <input name="rock" type="submit" value="Rock">
+            </form>
+            <form action="/process" method="post">
+                <input name="paper" type="submit" value="Paper">
+            </form>
+            <form action="/process" method="post">
+                <input name="scissor" type="submit" value="Scissor">
+            </form>
+        </div>
+    </body>
+</html>

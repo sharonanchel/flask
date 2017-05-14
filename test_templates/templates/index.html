@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My First Template</title>
+  </head>
+  <body>
+    <h3>My flask template with embedded Python like code</h3>
+    <!-- this will output the value of our pharse variable -->
+    <p>Pharse: {{ pharse }}</p>
+    <!-- this will output the value of our times variable -->
+    <p>Times: {{ times }}</p>
+    <!-- exsample off a for loop in our code -->
+    {% for x in range(0,times): %}
+    <p>{{ pharse }}</p>
+    {% endfor %}
+    <!-- example of if statement in our code  -->
+    {% if pharse == "hello" %}
+<p>The pharse says hello</p>
+    {% endif %}
+  </body>
+</html>

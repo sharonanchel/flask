@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Game</title>
+  <style type="text/css">
+  * {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  .container {
+    text-align: center;
+  }
+  .console {
+    width: 300px;
+    height: 300px;
+    color: #FFF;
+    margin: 20px auto;
+    /*padding: 60px 0;*/
+  }
+  .console h2,
+  .console p {
+    margin: 0 0 10px 0;
+  }
+  .red {
+    background-color: red;
+  }
+  .green {
+    background-color: green
+  }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <p>Welcome to the Great Number Game!</p>
+    <p>I am thinking of a number between 1 and 100 take a guess!</p>
+
+    {% if outcome == 'was the number!' %}
+    <div class="console green">
+      <h2>{{ numToGuess }} {{ outcome }}</h2>
+      <p> You got it in {{ guessCount }} tries.</p>
+      <form action="/reset" method="post">
+        <input type="submit" name="reset" value="Play Again!">
+      </form>
+    </div>
+    {% elif outcome != '' %}
+    <div class="console red">
+        <h2> {{ outcome }}</h2>
+    </div>
+    {% endif %}
+
+      <form action="/process" method="post">
+        <input type="text" name="guess"><br>
+        <input type="submit" name="submit" value="Guess">
+      </form>
+  </div>
+</body>
+</html>
